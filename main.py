@@ -14,7 +14,7 @@ from PyPDF2 import PdfReader
 import docx
 from datetime import datetime
 
-GEMINI_API_KEY = "AIzaSyAAgPIb30FYvBepX_SYxXFbcnkk0ySWwag"
+api_key = st.secrets["GEMINI_API_KEY"]
 
 class TextExtractor:    
     def __init__(self, api_key):
@@ -593,9 +593,9 @@ def main():
     if 'job_title' not in st.session_state:
         st.session_state.job_title = ""
     
-    extractor = TextExtractor(GEMINI_API_KEY)
-    cv_analyzer = CVAnalyzer(GEMINI_API_KEY)
-    job_analyzer = JobRoleAnalyzer(GEMINI_API_KEY)
+    extractor = TextExtractor(api_key)
+    cv_analyzer = CVAnalyzer(api_key)
+    job_analyzer = JobRoleAnalyzer(api_key)
     
     st.header("Input Section")
     
