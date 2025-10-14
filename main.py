@@ -1,7 +1,7 @@
 import streamlit as st
 import google.generativeai as genai
 import json
-from typing import Dict, Any, List
+from typing import Dict, Any
 import pandas as pd
 import io
 import tempfile
